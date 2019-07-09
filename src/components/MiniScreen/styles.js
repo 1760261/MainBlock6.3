@@ -22,6 +22,18 @@ const styles = StyleSheet.create({
     marginRight: 3,
     marginTop: 2,
   },
+  Time: {
+    marginTop: 5,
+    fontSize: 12,
+    color: '#BDBDBD',
+    fontWeight: 'bold',
+  },
+  Kind: {
+    fontSize: 12,
+    color: '#F9A825',
+    fontWeight: 'bold',
+    marginTop: 5,
+  },
 });
 
 export default styles;

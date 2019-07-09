@@ -16,8 +16,10 @@ export default class Top extends Component {
           margin: 20,
           borderRadius: 10,
           position: 'absolute',
+          flex: 1,
         }}>
         <Image style={styles.LargIMG} source={require('@Asset/images/IMG1.png')} />
+
         <View
           style={{
             justifyContent: 'center',

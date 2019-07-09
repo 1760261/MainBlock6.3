@@ -4,32 +4,41 @@ import styles from '@Component/MiniScreen/styles';
 
 import { Icon } from 'native-base';
 
-const TextScreen = () => {
+const TextScreen = ({ Title, Trip, Time, Kind }) => {
   return (
     <View
       style={{
-        width: Dimensions.get('window').width * 0.55,
-        height: Dimensions.get('window').width * 0.3,
+        flex: 1,
+        marginLeft: 10,
+        marginRight: 30,
       }}>
-      <Text style={styles.Title}> Top 10 Yoga paths you could take to be stress free today</Text>
-      <Text style={styles.Trip}>
-        Lorem ipsum dolor sit amet, his last consectetur adipiscing elit...
-      </Text>
+      <View
+        style={{
+          flex: 5,
+        }}>
+        <Text style={styles.Title}>{Title} </Text>
+      </View>
+      <View
+        style={{
+          flex: 4,
+        }}>
+        <Text style={styles.Trip}>{Trip}</Text>
+      </View>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={styles.Kind}> {Kind}</Text>
+        <Text style={styles.Trip}>{Time}</Text>
+      </View>
     </View>
   );
 };
 
-const IMGScreen = () => {
+const IMGScreen = ({ IMGURI }) => {
   return (
     <View
       style={{
-        width: Dimensions.get('window').width * 0.35,
-        height: Dimensions.get('window').width * 0.3,
-        // width: '100%',
-        // height: '100%',
         marginLeft: 10,
       }}>
-      <Image style={styles.LargIMG} source={require('@Asset/images/IMG2.png')} />
+      <Image style={styles.LargIMG} source={IMGURI} />
     </View>
   );
 };
@@ -38,21 +47,43 @@ export default class MiniScreen extends Component {
     let SrW = Dimensions.get('window').width;
     let SrH = Dimensions.get('window').height;
     return (
-      <View style={{ backgroundColor: 'red', marginTop: SrW * 0.8, flexDirection: 'row', flex: 1 }}>
+      <View
+        style={{
+          height: SrW / 2,
+        }}>
         <View
           style={{
-            flex: 4,
-            backgroundColor: 'red',
+            marginTop: 20,
+            flexDirection: 'row',
+            flex: 1,
+            marginLeft: 10,
           }}>
-          <IMGScreen />
+          <View
+            style={{
+              flex: 4,
+            }}>
+            <IMGScreen IMGURI={this.props.IMGURI} />
+          </View>
+          <View
+            style={{
+              flex: 6,
+            }}>
+            <TextScreen
+              Title={this.props.Title}
+              Trip={this.props.Trip}
+              Time={this.props.Time}
+              Kind={this.props.Kind}
+            />
+          </View>
         </View>
         <View
           style={{
-            flex: 6,
-            backgroundColor: 'black',
-          }}>
-          <TextScreen />
-        </View>
+            height: 1,
+            borderColor: '#E0E0E0',
+            borderWidth: 1,
+            margin: 20,
+          }}
+        />
       </View>
     );
   }
