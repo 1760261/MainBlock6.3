@@ -7,14 +7,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   Title: {
-    fontSize: 22,
+    fontSize: 25,
     color: 'white',
-    fontWeight: 'bold',
+    fontWeight: '500',
   },
   Trip: {
     fontSize: 12,
     color: '#BDBDBD',
-    fontWeight: 'bold',
+    fontWeight: '500',
   },
   Icons: {
     fontSize: 12,
