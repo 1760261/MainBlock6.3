@@ -21,7 +21,7 @@ export default class Top extends Component {
             width: SrW,
             height: SrW - 10,
           }}
-          source={require('@Asset/images/IMG1.png')}>
+          source={this.props.IMGS}>
           <View style={{ flex: 7 }} />
           <View
             style={{
@@ -29,8 +29,8 @@ export default class Top extends Component {
               justifyContent: 'flex-start',
               flex: 3,
             }}>
-            <Text style={styles.Title}> Where to See the Biggest</Text>
-            <Text style={styles.Title}> Whales In the World</Text>
+            <Text style={styles.Title}> {this.props.Title1}</Text>
+            <Text style={styles.Title}> {this.props.Title2}</Text>
             <View
               style={{
                 flexDirection: 'row',
@@ -39,13 +39,13 @@ export default class Top extends Component {
                 marginTop: 20,
                 marginLeft: SrH * 0.4 * 0.02,
               }}>
-              <Text style={styles.Trip}> Travel</Text>
+              <Text style={styles.Trip}> {this.props.Trip}</Text>
               <View
                 style={{
                   flexDirection: 'row',
                 }}>
                 <Icon style={styles.Icons} name="back-in-time" type="Entypo" />
-                <Text style={styles.Trip}> Saturday at 12:00 PM</Text>
+                <Text style={styles.Trip}> {this.props.Time}</Text>
               </View>
             </View>
           </View>

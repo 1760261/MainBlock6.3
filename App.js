@@ -8,7 +8,13 @@ export default function App() {
   let SrW = Dimensions.get('window').width;
   return (
     <ScrollView>
-      <TopScreen />
+      <TopScreen
+        IMGS={require('@Asset/images/IMG1.png')}
+        Title1="Where to See the Biggest"
+        Title2="Whales In the World"
+        Time="Saturday at 12:00 PM"
+        Trip="Travel"
+      />
 
       <MiniScreen
         Kind="Travel"
